@@ -1,0 +1,53 @@
+[tasks]
+    [tasks.clean]
+        help = "Clean the project"
+        cmd = "uvx pyclean src"
+
+    [tasks.ruff_format]
+        help = "format codebase with ruff"
+        cmd = "ruff format ./src"
+
+    [tasks.ruff_check-fix]
+        help = "fix codebase with ruff"
+        cmd = "ruff check --fix ./src"
+
+    [tasks.ruff_check]
+        help = "lint codebase with ruff"
+        cmd = "ruff check ./src"
+
+    [tasks.uv-sort]
+        help = "fixes order of imports"
+        cmd = "uv run uv-sort"
+
+    [tasks.uv-sort_check]
+        help = "Checks if uv-sort was fixed"
+        cmd = "uv run uv-sort --check"
+
+    [tasks.pyright]
+        help = "Checks type hints with pyright"
+        cmd = "uv run pyright --warnings"
+
+    [tasks.lint]
+        help = "Checks linting"
+        sequence = ["uv-sort_check", "ruff_check", "pyright"]
+
+    [tasks.format]
+        help = "Reformat"
+        sequence = ["uv-sort", "ruff_format", "ruff_check-fix", "lint"]
+
+
+    [tasks.ci]
+    help = "Run the CI pipeline tasks"
+    sequence = ["lint"]
+
+    [tasks.dev]
+    help = "Run the development tasks"
+    sequence = ["clean", "format"]
+
+    [tasks.build]
+    help = "Build the project"
+    cmd = "uv build --all-packages --wheel"
+
+    [tasks.sync]
+    help = "uv sync everything"
+    cmd = "uv sync --locked --all-extras"

@@ -1,0 +1,44 @@
+[project]
+name = "ai-evaluator-py"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "azure-ai-evaluation>=1.13.1,<2.0",
+    "azure-ai-projects>=1.0.0,<2.0",
+    "lagom>=2.7.7,<3.0",
+    "pydantic-settings>=2.11.0,<3.0",
+]
+
+[project.optional-dependencies]
+cli = [
+    "pyright>=1.1.407,<2.0",
+    "ruff>=0.14.4,<0.15.0",
+]
+
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+defineConstant = { DEBUG = true }
+typeCheckingMode = "strict"
+include = ["src"]
+strict = ["src"]
+exclude = [
+    ".venv",
+    "typings",
+    "**/__pycache__",
+    "**/test*.py",
+    "**/*.as-is.py"
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/ai_evaluator"
+]

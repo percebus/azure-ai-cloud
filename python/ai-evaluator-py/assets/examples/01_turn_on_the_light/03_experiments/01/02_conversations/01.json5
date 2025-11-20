@@ -1,0 +1,38 @@
+{
+  conversation: {
+    messages: [
+      // interaction: 01
+      {
+        role: "user",
+        content: "Is the light on?",
+      },
+      {
+        role: "assistant",
+        content: "The light is currently off.",
+        context: "The default state of the light is off.",
+      },
+
+      // interaction: 02
+      {
+        role: "user",
+        content: "Turn the light on",
+      },
+      {
+        role: "assistant",
+        content: "The light has been turned on.",
+        context: "The LightPlugin.change_state function was called to turn the light on.",
+      },
+
+      // interaction: 03
+      {
+        role: "user",
+        content: "Is the light on?",
+      },
+      {
+        role: "assistant",
+        content: "Yes, the light is now on.",
+        context: "The LightPlugin.get_state function was called to check the light status.",
+      },
+    ],
+  },
+}

@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "inputs.query": "Is the light on?",
+      "inputs.ground_truth": "The light is off.",
+      "inputs.context": "The default state of the light is off.",
+      "inputs.response": "The light is currently off.",
+      "outputs.GroundednessEvaluator.groundedness": 5.0,
+      "outputs.GroundednessEvaluator.gpt_groundedness": 5.0,
+      "outputs.GroundednessEvaluator.groundedness_reason": "The RESPONSE accurately conveys the information from the CONTEXT without any additions or omissions, making it fully grounded and complete.",
+      "outputs.GroundednessEvaluator.groundedness_result": "pass",
+      "outputs.GroundednessEvaluator.groundedness_threshold": 3
+    },
+    {
+      "inputs.query": "Turn the light on",
+      "inputs.ground_truth": "The light was turned on.",
+      "inputs.context": "The LightPlugin.change_state function was called to turn the light on.",
+      "inputs.response": "The light has been turned on.",
+      "outputs.GroundednessEvaluator.groundedness": 5.0,
+      "outputs.GroundednessEvaluator.gpt_groundedness": 5.0,
+      "outputs.GroundednessEvaluator.groundedness_reason": "The RESPONSE accurately conveys the action of turning the light on as described in the CONTEXT, without any omissions or unsupported details. Thus, it is fully grounded and complete.",
+      "outputs.GroundednessEvaluator.groundedness_result": "pass",
+      "outputs.GroundednessEvaluator.groundedness_threshold": 3
+    },
+    {
+      "inputs.query": "Is the light on?",
+      "inputs.ground_truth": "The light is on.",
+      "inputs.context": "The LightPlugin.get_state function was called to check the light status.",
+      "inputs.response": "Yes, the light is now on.",
+      "outputs.GroundednessEvaluator.groundedness": 2.0,
+      "outputs.GroundednessEvaluator.gpt_groundedness": 2.0,
+      "outputs.GroundednessEvaluator.groundedness_reason": "The RESPONSE introduces information about the light being on, which is not explicitly stated or confirmed in the CONTEXT. Therefore, it does not adhere closely to the information provided.",
+      "outputs.GroundednessEvaluator.groundedness_result": "fail",
+      "outputs.GroundednessEvaluator.groundedness_threshold": 3
+    }
+  ],
+  "metrics": {
+    "GroundednessEvaluator.groundedness": 4.0,
+    "GroundednessEvaluator.gpt_groundedness": 4.0,
+    "GroundednessEvaluator.groundedness_threshold": 3.0,
+    "GroundednessEvaluator.binary_aggregate": 0.67
+  },
+  "studio_url": null
+}

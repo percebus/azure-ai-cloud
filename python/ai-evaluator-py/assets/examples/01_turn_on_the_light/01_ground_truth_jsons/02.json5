@@ -1,0 +1,5 @@
+{
+  query: "Turn the light on",
+  ground_truth: "The light was turned on.",
+  context: "The LightPlugin.change_state function was called to turn the light on.",
+}

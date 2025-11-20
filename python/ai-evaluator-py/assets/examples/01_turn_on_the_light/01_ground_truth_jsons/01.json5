@@ -1,0 +1,5 @@
+{
+  query: "Is the light on?",
+  ground_truth: "The light is off.",
+  context: "The default state of the light is off.",
+}

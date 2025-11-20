@@ -1,0 +1,3 @@
+{"query": "Is the light on?", "ground_truth": "The light is off.", "context": "The default state of the light is off."}
+{"query": "Turn the light on", "ground_truth": "The light was turned on.", "context": "The LightPlugin.change_state function was called to turn the light on."}
+{"query": "Is the light on?", "ground_truth": "The light is on.", "context": "The LightPlugin.get_state function was called to check the light status."}

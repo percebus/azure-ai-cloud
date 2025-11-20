@@ -1,0 +1,5 @@
+{
+  query: "Is the light on?",
+  ground_truth: "The light is on.",
+  context: "The LightPlugin.get_state function was called to check the light status.",
+}
